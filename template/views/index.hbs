@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>MyBook | HOME</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/css/bootstrap.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+        integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+        crossorigin="anonymous" />
+</head>
+
+<body>
+    {{>header}}
+    
+ <div class="container px-6 text-justify">
+    <div class="row gx-5">
+      <div class="col-sm-6 col-md-7">
+        <div class="p-5">
+          <b>
+            <h2>Knowledge Book</h2>
+          </b>
+          <br>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat.
+          <br><br>
+          {{#if user}}
+                <a class="btn btn-outline-primary" href="/logoutf">Loguot</a>
+
+          {{else}}
+                <a class="btn btn-outline-primary" href="/login">login -></a>
+          {{/if}}
+          
+        </div>
+      </div>
+      <div class="col-6 col-md-4">
+        <div class="p-3"><img class="device" src="https://i.imgur.com/bkCeTu7.png" width="450" height="450"></div>
+      </div>
+    </div>
+  </div>
+
+
+    <!--Search-->
+    <div class="search sticky-top">
+        <form class="row g-0">
+
+            <div class="col-auto" id="textfield">
+                <label for="inputPassword2" class="visually-hidden">Search...</label>
+                <input type="text" class="form-control" id="inputPassword2" placeholder="Search by Title / Author">
+            </div>
+            <div class="col-auto">
+                <!-- Example single danger button -->
+                <div class="btn-group">
+                    <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown"
+                        aria-expanded="false" style="background:none;border-color:blue">
+                        Filter
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-lg-end">
+                        <li><a class="dropdown-item active" href="#">Filter</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Separated link</a></li>
+                    </ul>
+                    <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown"
+                        aria-expanded="false" style="margin-left: 5%;background:none;border-color:blue">
+                        Sort
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Sort</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Separated link</a></li>
+                    </ul>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!--books-->
+    <section id="trending">
+        <h3>Top trending</h3>
+
+        <div class="owl-carousel owl-theme" id="double">
+            {{#each data}}
+            <div class="item"><a href="/book/{{this._id}}">
+                    <img src="/upload/{{this._id}}" height="200">
+                    <div>
+                        <h4>{{this.title}}</h4>
+                        <h6>{{this.author}}</h6>
+                        {{#if this.avgRating}}
+                        <h6>{{this.avgRating}}</h6>
+                        {{else}}
+                        <h6>0</h6>
+
+                        {{/if}}
+                    </div>
+                </a>
+
+            </div>
+            {{/each}}
+        </div>
+
+
+
+    </section>
+
+    <section id="trending">
+        <h3>New launch</h3>
+
+        <div class="owl-carousel owl-theme" id="single">
+            {{#each data}}
+            <div class="item"><a href="/book/{{this._id}}">
+                    <img src="/upload/{{this._id}}" height="200">
+                    <div>
+                        <h4>{{this.title}}</h4>
+                        <h6>{{this.author}}</h6>
+                        {{#if this.avgRating}}
+                        <h6>{{this.avgRating}}</h6>
+                        {{else}}
+                        <h6>0</h6>
+
+                        {{/if}}
+                    </div>
+                </a>
+
+            </div>
+            {{/each}}
+        </div>
+
+
+    </section>
+
+
+    <section id="trending">
+        <h3>Top trending</h3>
+       
+        <div class="owl-carousel owl-theme" id="double">
+            {{#each data}}
+            <div class="item"><a href="/book/{{this._id}}">
+                    <img src="/upload/{{this._id}}" height="200">
+                    <div>
+                        <h4>{{this.title}}</h4>
+                        <h6>{{this.author}}</h6>
+                        {{#if this.avgRating}}
+                        <h6>{{this.avgRating}}</h6>
+                        {{else}}
+                        <h6>0</h6>
+
+                        {{/if}}
+                    </div>
+                </a>
+
+            </div>
+            {{/each}}
+        </div>
+
+
+    </section>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./js/bootstrap.bundle.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#single').owlCarousel({
+                loop: true,
+                margin: 20,
+                nav: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 1
+                    },
+                    1000: {
+                        items: 1
+                    }
+                }
+            });
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 20,
+                nav: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 1
+                    },
+                    1000: {
+                        items: 3
+                    }
+                }
+            });
+
+
+        });
+
+
+    </script>
+</body>
+
+</html>

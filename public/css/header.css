@@ -1,0 +1,36 @@
+.container{
+    margin-top: 10%;
+    margin-bottom:1%;
+}
+input[type="submit"]{
+    margin-top:5%
+}
+#navbarSupportedContent .nav-item:nth-last-child(1){
+    float: right;
+    margin-left: 1100px;
+}
+
+
+.navbar-nav .active{
+    border-bottom:solid 2px rgb(0, 41, 128);
+    color: blue;
+}
+
+
+@media screen and (max-width:600px){
+    #navbarSupportedContent{
+        float: left;
+        margin-left: 0%;
+    }
+
+    #navbarSupportedContent .nav-item:nth-last-child(1){
+        float: right;
+        margin-left: 0;
+    }
+    
+    
+    .navbar-nav .active{
+        border-bottom:none;
+        color: blue;
+    }
+}
